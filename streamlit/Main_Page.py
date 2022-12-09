@@ -34,3 +34,5 @@ st.multiselect("Restaurant Ambience", ['Touristy', 'Hipster', 'Romantic', 'Divey
     'Intimate', 'Trendy', 'Upscale', 'Classy', 'Casual'])
 
 st.multiselect("Parking", ['Garage', 'Street', 'Validated', 'Lot', 'Valet'])
+
+st.radio("Price Range?", ['$', '$$', '$$$', '$$$$'])
