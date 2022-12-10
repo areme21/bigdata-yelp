@@ -9,7 +9,7 @@ st.set_page_config(
     page_title="Big Data Final Project - Yelp"
 )
 
-st.title("Big Data Final Project - Yelp")
+st.title("Model")
 days_open = st.slider("How many days a week will you be open?", 0, 7)
 # avg_hours_open = st.number_input("What is the average number of hours you are open each day?", max_value=24.0)
 zip_code = st.selectbox("In what Philadelphia zip code will you be located?", (19107, 19106, 19147, 19127, 19123, 19104, 19130, 19124, 19139, 19115,
