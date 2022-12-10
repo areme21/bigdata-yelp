@@ -1,6 +1,9 @@
 import streamlit as st
 import randomforest as rf
 import numpy as np
+import pandas as pd
+import folium
+from streamlit_folium import st_folium
 
 st.set_page_config(
     page_title="Big Data Final Project - Yelp"
@@ -8,14 +11,17 @@ st.set_page_config(
 
 st.title("Big Data Final Project - Yelp")
 st.sidebar.success("Select page")
-days_open = st.slider("How many days a week are you open?", 0, 7)
-avg_hours_open = st.number_input("What is the average number of hours you are open each day?", max_value=24.0)
-zip_code = st.selectbox("In what Philadelphia zip code are you located?", (19107, 19106, 19147, 19127, 19123, 19104, 19130, 19124, 19139, 19115,
+days_open = st.slider("How many days a week will you be open?", 0, 7)
+# avg_hours_open = st.number_input("What is the average number of hours you are open each day?", max_value=24.0)
+zip_code = st.selectbox("In what Philadelphia zip code will you be located?", (19107, 19106, 19147, 19127, 19123, 19104, 19130, 19124, 19139, 19115,
  19146, 19103, 19126, 19131, 19114, 19121, 19154, 19143, 19134, 19102,
  19128, 19111, 19118, 19153, 19141, 19129, 19148, 19120, 19151, 19119,
  19122, 19149, 19176, 19136, 19135, 19145, 19152, 19125, 19138, 19116,
  19144, 19112, 19137, 19132, 19133, 19140, 19142, 19150, 19195, 19155,
  19113, 19454, 19019, 19092))
+
+zip_income = pd.read_csv('zip_to_med_income.csv')
+median_income = zip_income.loc[zip_income['postal_code'] == zip_code, 'median_income'].iloc[0]
 
 attributes = st.multiselect("Select restaurant attributes", \
     ['Delivery', 'Takeout', 'Accept Credit Cards', 'Outdoor Seating', 'Reservations',\
@@ -39,7 +45,6 @@ parking = st.multiselect("Parking", ['Garage', 'Street', 'Validated', 'Lot', 'Va
 
 price_range = st.radio("Price Range?", ['$', '$$', '$$$', '$$$$'])
 
-button = st.button("Find Yelp Score!")
 
 
 takeout = 1 if "Takeout" in attributes else 0
@@ -80,7 +85,7 @@ asian_fusion = 1 if 'Asian Fusion' in categories else 0
 vegetarian = 1 if 'Vegetarian' in categories else 0
 caterers = 1 if 'Caterers' in categories else 0
 desserts = 1 if 'Desserts' in categories else 0
-sushi_bars = 1 if 'Sushi Bars' in categories else 0
+sushi_bars = 1 if 'Sushi Bar' in categories else 0
 mediterranean = 1 if 'Mediterranean' in categories else 0
 cheesesteaks = 1 if 'Cheesesteaks' in categories else 0
 pubs = 1 if 'Pubs' in categories else 0
@@ -99,8 +104,8 @@ validated = 1 if 'Validated' in parking else 0
 lot = 1 if 'Lot' in parking else 0
 valet = 1 if 'Valet' in parking else 0
 days_open = days_open# days_open is set
-median_income = 85000# need to get median_income
-mean_income = 85000# need to get mean_income
+median_income = median_income# need to get median_income
+mean_income = 0# need to get mean_income
 attire_casual = 1 if attire == "Casual" else 0
 attire_dressy = 1 if attire == "Dressy" else 0
 attire_formal = 1 if attire == "Formal" else 0
@@ -108,7 +113,7 @@ attire_other = 1 if attire == "Other" else 0
 wifi_free = 1 if wifi == "Free WiFi" else 0
 wifi_no = 1 if wifi == "No WiFi" else 0
 wifi_paid = 1 if wifi == "Paid WiFi" else 0
-high_median_income = 1# need to get high median income
+high_median_income = 1
 postal_code_0 = 0
 postal_code_19019 = 1 if zip_code == 19019 else 0
 postal_code_19092 = 1 if zip_code == 19092 else 0
@@ -172,9 +177,9 @@ sample = np.array([takeout, delivery, accepts_credit, high_price_range, outdoor_
                 salad, specialty_food, chicken_wings, bakeries, japanese, asian_fusion, vegetarian, \
                     caterers, desserts, sushi_bars, mediterranean, cheesesteaks, pubs, \
                         touristy, hipster, romantic, divey, intimate, trendy, upscale, \
-                            classy, casual, garage, street, validated, lot, valet, days_open, median_income, \
-                                mean_income, attire_casual, attire_dressy, attire_formal, attire_other, wifi_free,\
-                                    wifi_no, wifi_paid, high_median_income, postal_code_0, postal_code_19019, postal_code_19092, \
+                            classy, casual, garage, street, validated, lot, valet, days_open, median_income, mean_income,\
+                                attire_casual, attire_dressy, attire_formal, attire_other, wifi_free,\
+                                    wifi_no, wifi_paid, high_median_income,postal_code_0, postal_code_19019, postal_code_19092, \
                                         postal_code_19102, postal_code_19103, postal_code_19104, postal_code_19106, postal_code_19107,\
                                             postal_code_19111, postal_code_19112, postal_code_19113, postal_code_19114, postal_code_19115, \
                                                 postal_code_19116, postal_code_19118, postal_code_19119, postal_code_19120, postal_code_19121, \
@@ -183,5 +188,47 @@ sample = np.array([takeout, delivery, accepts_credit, high_price_range, outdoor_
                                                             postal_code_19140, postal_code_19141, postal_code_19142, postal_code_19143, postal_code_19144, postal_code_19145, postal_code_19146, postal_code_19147, postal_code_19148, postal_code_19149, \
                                                                 postal_code_19150, postal_code_19151, postal_code_19152, postal_code_19153, postal_code_19154, postal_code_19155, postal_code_19176, postal_code_19195, postal_code_19454])
 pred = rf.randomforest.predict(sample.reshape(1, -1))
-if button:
-    st.write(pred)
+
+clean_csv = pd.read_csv('final_clean.csv')
+
+def plot_cat_in_zip(cat: list, zip):
+    # cat input must be a list of names of category columns
+    filter_cat = False
+    for category in cat:
+        filter_cat = filter_cat | (clean_csv[category] == 1)
+    data = clean_csv[(clean_csv['postal_code'] == zip) & filter_cat]
+
+    if (len(data) == 0):
+        print("no {} in {}".format(cat, zip))
+        return
+
+    data_map = folium.Map(location=[data.latitude.mean(), data.longitude.mean()],
+                    zoom_start=12,
+                    control_scale=True)
+
+    for i, row in data.iterrows():
+        iframe = folium.IFrame(str(row["name"]), "50%", ratio="30%")
+        popup = folium.Popup(iframe, min_width=300, max_width=300)
+        folium.Marker(location=[row['latitude'],row['longitude']],
+                  popup = popup, c=row['postal_code']).add_to(data_map)
+
+    return data_map
+if len(categories) != 0:
+    button = st.button("Find Yelp Score!")
+    if button:
+        st.subheader("Your predicted Yelp Score: " + str(round(pred[0], 2)))
+    map = plot_cat_in_zip(categories, zip_code)
+    st.write("**Restaurants in your zip code with at least 1 of the same categories:**")
+    st_map = st_folium(map, width=700, height=500, zoom=14)
+else:
+    button = st.button("Find Yelp Score!")
+    if button:
+        st.subheader("Your predicted Yelp Score: " + str(round(pred[0], 2)))
+
+# this csv needs to be the final clean csv that still has latitude, longitude columns
+
+# example:
+# plot_cat_in_zip(['Coffee & Tea', "Pizza"], 19115)
+
+# example that doesn't work
+# plot_cat_in_zip(['Coffee & Tea', "Pizza"], 80000)

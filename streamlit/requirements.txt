@@ -5,3 +5,5 @@ plotly==4.14.3
 pandas==1.2.3
 scikit-learn
 graphviz
+folium
+streamlit_folium
