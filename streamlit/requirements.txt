@@ -7,3 +7,4 @@ scikit-learn
 graphviz
 folium
 streamlit_folium
+st_folium
