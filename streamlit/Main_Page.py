@@ -177,9 +177,9 @@ sample = np.array([takeout, delivery, accepts_credit, high_price_range, outdoor_
                 salad, specialty_food, chicken_wings, bakeries, japanese, asian_fusion, vegetarian, \
                     caterers, desserts, sushi_bars, mediterranean, cheesesteaks, pubs, \
                         touristy, hipster, romantic, divey, intimate, trendy, upscale, \
-                            classy, casual, garage, street, validated, lot, valet, days_open, median_income, mean_income,\
+                            classy, casual, garage, street, validated, lot, valet, days_open, median_income,\
                                 attire_casual, attire_dressy, attire_formal, attire_other, wifi_free,\
-                                    wifi_no, wifi_paid, high_median_income,postal_code_0, postal_code_19019, postal_code_19092, \
+                                    wifi_no, wifi_paid, postal_code_0, postal_code_19019, postal_code_19092, \
                                         postal_code_19102, postal_code_19103, postal_code_19104, postal_code_19106, postal_code_19107,\
                                             postal_code_19111, postal_code_19112, postal_code_19113, postal_code_19114, postal_code_19115, \
                                                 postal_code_19116, postal_code_19118, postal_code_19119, postal_code_19120, postal_code_19121, \
