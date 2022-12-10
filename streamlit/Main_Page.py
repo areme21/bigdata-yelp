@@ -219,7 +219,7 @@ if len(categories) != 0:
         st.subheader("Your predicted Yelp Score: " + str(round(pred[0], 2)))
     map = plot_cat_in_zip(categories, zip_code)
     st.write("**Restaurants in your zip code with at least 1 of the same categories:**")
-    st_map = sf.st_folium(map, width=700, height=500, zoom=14)
+    st_map = sf.st_folium(map, width=700, height=500)
 else:
     button = st.button("Find Yelp Score!")
     if button:
