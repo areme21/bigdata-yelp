@@ -8,9 +8,9 @@ from sklearn.tree import plot_tree, export_graphviz
 import graphviz
 
 
-df = pd.read_csv('for_tree.csv')
+df = pd.read_csv('streamlit/for_tree.csv')
 df1 = pd.get_dummies(df, columns=['postal_code'])
-clean_df = pd.read_csv('final_clean.csv')
+clean_df = pd.read_csv('streamlit/final_clean.csv')
 # data2 = data1.fillna(0)
 data = df1.drop(['is_open', 'Unnamed: 0', 'zip'], axis='columns')
 # data.to_csv('Final Project/data.csv')
