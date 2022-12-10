@@ -20,7 +20,7 @@ zip_code = st.selectbox("In what Philadelphia zip code will you be located?", (1
  19144, 19112, 19137, 19132, 19133, 19140, 19142, 19150, 19195, 19155,
  19113, 19454, 19019, 19092))
 
-zip_income = pd.read_csv('zip_to_med_income.csv')
+zip_income = pd.read_csv('streamlit/zip_to_med_income.csv')
 median_income = zip_income.loc[zip_income['postal_code'] == zip_code, 'median_income'].iloc[0]
 
 attributes = st.multiselect("Select restaurant attributes", \
@@ -189,7 +189,7 @@ sample = np.array([takeout, delivery, accepts_credit, high_price_range, outdoor_
                                                                 postal_code_19150, postal_code_19151, postal_code_19152, postal_code_19153, postal_code_19154, postal_code_19155, postal_code_19176, postal_code_19195, postal_code_19454])
 pred = rf.randomforest.predict(sample.reshape(1, -1))
 
-clean_csv = pd.read_csv('final_clean.csv')
+clean_csv = pd.read_csv('streamlit/final_clean.csv')
 
 def plot_cat_in_zip(cat: list, zip):
     # cat input must be a list of names of category columns

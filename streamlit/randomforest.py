@@ -9,9 +9,9 @@ import graphviz
 
 # ONLY MEEDIAN INCOME
 
-df = pd.read_csv('Final Project/bigdata-yelp/streamlit/for_tree.csv') # pd.read_csv('streamlit/for_tree.csv')
+df = pd.read_csv('streamlit/for_tree.csv') # pd.read_csv('streamlit/for_tree.csv')
 df1 = pd.get_dummies(df, columns=['postal_code'])
-clean_df = pd.read_csv('Final Project/bigdata-yelp/streamlit/final_clean.csv') # pd.read_csv('streamlit/final_clean.csv')
+clean_df = pd.read_csv('streamlit/final_clean.csv') # pd.read_csv('streamlit/final_clean.csv')
 # data2 = data1.fillna(0)
 # data = df1.drop(['is_open', 'Unnamed: 0', 'zip', 'mean_income', 'HighMedianIncome','HighMeanIncome'], axis='columns')
 data = df1.drop(['is_open', 'Unnamed: 0', 'zip'], axis='columns')
