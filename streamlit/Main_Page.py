@@ -203,7 +203,7 @@ def plot_cat_in_zip(cat: list, zip):
         return
 
     data_map = folium.Map(location=[data.latitude.mean(), data.longitude.mean()],
-                    zoom_start=12,
+                    zoom_start=14,
                     control_scale=True)
 
     for i, row in data.iterrows():
