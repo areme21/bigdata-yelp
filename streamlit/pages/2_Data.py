@@ -44,7 +44,7 @@ def make_heatmap():
    # plot heatmap
    map2.add_child(plugins.HeatMap(location_data, radius=15))
    map2.save('heatmap.html')
-   map2
+   #map2
  
    hm_layer = plugins.HeatMap(location_data,
                    min_opacity=0.4,
@@ -54,7 +54,7 @@ def make_heatmap():
    map2.add_child(hm_layer)
    return map2
  
-# sf.st_folium(make_heatmap())
+sf.st_folium(make_heatmap(), height=500)
 st.write("Looking closer at the attributes data, we can see the following chart that shows the distribution of several of the top attributes that have boolean values. We can see that for some attributes, like offering takeout, a vast majority offer takeout compared to only about 9% who don’t. However for another attribute, like offering reservations, only about 35 percent of restaurants in Philly offer reservations. ")
 st.image("streamlit/top_rest_attributes.png")
 st.write("As for categories, the top category that restaurants shared was Nightlife at 19.5% of restaurants. Other top categories include Bars, Sandwiches, Pizza, American (New), and Breakfast & Brunch. See the wordcloud below for more of the top categories.")
