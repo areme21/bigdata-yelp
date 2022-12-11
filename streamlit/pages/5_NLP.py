@@ -32,6 +32,7 @@ if category == "Bakeries":
     st.image("streamlit/bakeries/wordCloud.png")
     st.image("streamlit/bakeries/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 place : [('love', 0.027094668), ('go-to', 0.011242716), ('awesome', 0.008314155), ('great', 0.0061796913), ('eat', 0.0054849065)]
 
 
@@ -183,6 +184,7 @@ nice : [('staff', 0.011782849), ('super', 0.0063091065), ('really', 0.0029586388
 
 
 **One Star Reviews**
+
 food : [('experience', 0.0006857641), ('ever', 0.000630791), ('day', 0.0006256662), ('great', 0.00061990076), ('wait', 0.0006189283)]
 
 
@@ -338,6 +340,7 @@ elif category == "Bars":
     st.image("streamlit/bars/wordCloud.png")
     st.image("streamlit/bars/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 great : [('service', 0.01614107), ('atmosphere', 0.00960041), ('experience', 0.00745694), ('job', 0.0053773285), ('prices', 0.0050195362)]
 
 
@@ -489,6 +492,7 @@ experience : [('dining', 0.74155694), ('dinning', 0.038348332), ('positive', 0.0
 
 
 **One Star Reviews**
+
 food : [('poisoning', 0.47550294), ('mediocre', 0.08221698), ('quality', 0.049902204), ('average', 0.0133601595), ('subpar', 0.01142097)]
 
 
@@ -645,6 +649,7 @@ elif category == "Cheesesteaks":
     st.image("streamlit/cheesesteaks/wordCloud.png")
     st.image("streamlit/cheesesteaks/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 cheesesteak : [('favorite', 0.018000733), ('philadelphia', 0.015728619), ('ever', 0.010519282), ('authentic', 0.010067194), ('ordered', 0.00888597)]
 
 
@@ -796,6 +801,7 @@ pat's : [('night', 0.00042824645), ('little', 0.00041174327), ('took', 0.0004003
 
 
 **One Star Reviews**
+
 place : [('recommend', 0.0012750104), ('many', 0.0011335528), ('anyone', 0.0010623124), ('review', 0.0010609606), ('going', 0.001002594)]
 
 
@@ -951,6 +957,7 @@ elif category == "Chicken Wings":
     st.image("streamlit/wings/wordCloud.png")
     st.image("streamlit/wings/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 chicken : [('fried', 0.0655027), ('korean', 0.02410782), ('ever', 0.01587783), ('sandwich', 0.014048549), ('chicken', 0.012594945)]
 
 
@@ -1102,6 +1109,7 @@ favorite : [('favorite', 0.0026776541), ('ever', 0.002112483), ('korean', 0.0019
 
 
 **One Star Reviews**
+
 order : [('hour', 0.002239005), ('minutes', 0.0020536801), ('hours', 0.0018983784), ('took', 0.00189718), ('waiting', 0.0018320731)]
 
 
@@ -1256,6 +1264,7 @@ elif category == "Chinese":
     st.image("streamlit/chinese/wordCloud.png")
     st.image("streamlit/chinese/bigramCloud.png")
     st.write("""**Five Star Reviews**
+    
 food : [('asian', 0.042030394), ('comfort', 0.035984512), ('chinese', 0.019288078), ('quality', 0.013652301), ('vietnamese', 0.008605243)]
 
 
@@ -1407,6 +1416,7 @@ nice : [('staff', 0.00981329), ('touch', 0.0046574855), ('servers', 0.0044071088
 
 
 **One Star Reviews**
+
 food : [('terrible', 0.004615983), ('horrible', 0.0046133823), ('good', 0.003992501), ('great', 0.0032822045), ('mediocre', 0.0030564545)]
 
 
@@ -1562,6 +1572,7 @@ elif category == "Coffee & Tea":
     st.image("streamlit/coffeetea/wordCloud.png")
     st.image("streamlit/coffeetea/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 place : [('go-to', 0.030420424), ('awesome', 0.0065581813), ('rocks', 0.0056213266), ('study', 0.0048703398), ('chill', 0.004637225)]
 
 
@@ -1713,6 +1724,7 @@ super : [('friendly', 0.0072554005), ('busy', 0.0064891865), ('cute', 0.00522115
 
 
 **One Star Reviews**
+
 food : [('food', 0.0015353285), ('service', 0.001503654), ('horrible', 0.0010388843), ('terrible', 0.00097456324), ('customer', 0.0009522369)]
 
 
@@ -1868,6 +1880,7 @@ elif category == "Fast Food":
     st.image("streamlit/fastfood/wordCloud.png")
     st.image("streamlit/fastfood/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 place : [('great', 0.0018938953), ('favorite', 0.0017740297), ('love', 0.0015648132), ('amazing', 0.0012179207), ('best', 0.0011955078)]
 
 
@@ -2019,6 +2032,7 @@ people : [('crowded', 0.0034220286), ('around', 0.0025405954), ('friendly', 0.00
 
 
 **One Star Reviews**
+
 food : [('slow', 0.001159376), ('service', 0.001150265), ('fast', 0.0010243292), ('customer', 0.001004257), ('horrible', 0.0009399149)]
 
 
@@ -2173,6 +2187,7 @@ elif category == "Italian":
     st.image("streamlit/italian/wordCloud.png")
     st.image("streamlit/italian/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 great : [('atmosphere', 0.041506782), ('service', 0.022592405), ('experience', 0.015146322), ('value', 0.011496417), ('job', 0.009930586)]
 
 
@@ -2324,6 +2339,7 @@ recommend : [('highly', 0.9998517), ('anyone', 6.8483074e-05), ('strongly', 2.89
 
 
 **One Star Reviews**
+
 food : [('good', 0.004403311), ('mediocre', 0.0033748911), ('quality', 0.0029256076), ('great', 0.0024545973), ('terrible', 0.0022904288)]
 
 
@@ -2478,6 +2494,7 @@ elif category == "Mexican":
     st.image("streamlit/mexican/wordCloud.png")
     st.image("streamlit/mexican/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 food : [('authentic', 0.028633121), ('quality', 0.024208123), ('mexican', 0.01771746), ('outstanding', 0.017498557), ('excellent', 0.011168757)]
 
 
@@ -2629,6 +2646,7 @@ wait : [('worth', 0.09465172), ('long', 0.024180394), ('minutes', 0.022266202), 
 
 
 **One Star Reviews**
+
 food : [('service', 0.0012137673), ('terrible', 0.0010403458), ('horrible', 0.0009997421), ('poor', 0.0009197562), ('customer', 0.0008723579)]
 
 
@@ -2784,6 +2802,7 @@ elif category == "Sandwiches":
     st.image("streamlit/sandwiches/wordCloud.png")
     st.image("streamlit/sandwiches/bigramCloud.png")
     st.write("""**Five Star Reviews**
+
 place : [('cute', 0.011040691), ('favorite', 0.007916263), ('popular', 0.0074711572), ('love', 0.0063675293), ('found', 0.004712843)]
 
 
@@ -2935,6 +2954,7 @@ eat : [('could', 0.014932423), ('able', 0.0043227314), ('sit', 0.002842889), ('g
 
 
 **One Star Reviews**
+
 food : [('horrible', 0.0024749981), ('terrible', 0.0023322108), ('good', 0.0022887667), ('overpriced', 0.0019557786), ('great', 0.0016098414)]
 
 
