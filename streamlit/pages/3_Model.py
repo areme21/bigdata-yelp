@@ -10,6 +10,8 @@ st.set_page_config(
 )
 
 st.title("Model")
+
+st.write("With the model below, prospective restaurant investors and owners in Philadelphia can enter characteristics about their future restaurant to receive a predicted Yelp Score. A metric that combines Yelp ratings with the number of reviews, the Yelp Score (which will be elaborated on in the next section) should give the business an idea of what qualities will make the restaurant more and less popular with customers. To use, simply answer the questions below, and click the Find Yelp Score button. Once a business enters the categories of their restaurant, they will also find a map of restaurants in their zip code with at least one of the same categories.")
 days_open = st.slider("How many days a week will you be open?", 0, 7)
 # avg_hours_open = st.number_input("What is the average number of hours you are open each day?", max_value=24.0)
 zip_code = st.selectbox("In what Philadelphia zip code will you be located?", (19107, 19106, 19147, 19127, 19123, 19104, 19130, 19124, 19139, 19115,
