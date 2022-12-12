@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("NLP")
+st.title("Yelp Reviews NLP")
 
 st.write("What do reviews reveal what customers look for in a restaurant? This was the question we sought to tackle in the second part of our project, which took on more of an exploratory approach.")
 st.write("Before starting, we tried to get a better feel for our data by making some plots. We see that customers most often leave 5 star reviews, and are in general more positive in the ratings they write. We also observe that the average star rating left by reviewers has been relatively stable at around 3.9 stars through the years.")

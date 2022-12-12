@@ -9,7 +9,7 @@ st.set_page_config(
     page_title="Big Data Final Project - Yelp"
 )
 
-st.title("Model")
+st.title("Random Forest Model")
 
 st.write("With the model below, prospective restaurant investors and owners in Philadelphia can enter characteristics about their future restaurant to receive a predicted Yelp Score. A metric that combines Yelp ratings with the number of reviews, the Yelp Score (which will be elaborated on in the next section) should give the business an idea of what qualities will make the restaurant more and less popular with customers. Yelp Scores near 1 are worse and Yelp Scores near 5 are the best. To use, simply answer the questions below, and click the Find Yelp Score button. Once a business enters the categories of their restaurant, they will also find an interactive map of restaurants in their zip code with at least one of the same categories.")
 days_open = st.slider("How many days a week will you be open?", 0, 7)

@@ -5,7 +5,7 @@ import streamlit_folium as sf
 import pandas as pd
 import streamlit.components.v1 as com
 
-st.title("Data")
+st.title("Data Processing")
 
 st.header("Data Cleaning")
 st.write("For this project, we used a [dataset](https://www.yelp.com/dataset/documentation/main) provided directly from Yelp. This dataset has multiple json files, including a file for all businesses and another file for reviews. Exploring the dataset in its entirety, we found which states, cities, and zip codes were most represented. We wanted our analysis to balance capturing idiosyncrasies among geographic locations with some level of generalizability. Thus, we decided to constrain our analysis to cities. The most represented cities in the business.json dataset were as follows:")
