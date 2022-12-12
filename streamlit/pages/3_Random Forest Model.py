@@ -201,14 +201,16 @@ def plot_cat_in_zip(cat: list, zip):
 
     if (len(data) == 0):
         print("no {} in {}".format(cat, zip))
-        return
+        return folium.Map(location=[clean_csv.latitude.mean(), clean_csv.longitude.mean()],
+                    zoom_start=12,
+                    control_scale=True)
 
     data_map = folium.Map(location=[data.latitude.mean(), data.longitude.mean()],
                     zoom_start=14,
                     control_scale=True)
-
+    
     for i, row in data.iterrows():
-        iframe = folium.IFrame(str(row["name"]), "50%", ratio="30%")
+        iframe = folium.IFrame(str(row["name"]))
         popup = folium.Popup(iframe, min_width=300, max_width=300)
         folium.Marker(location=[row['latitude'],row['longitude']],
                   popup = popup, c=row['postal_code']).add_to(data_map)
